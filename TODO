@@ -1,0 +1,11 @@
+# def self.request(params)
+#   raise Error, "Provided params must be a Hash" unless params.kind_of?(Hash)
+#   raise Error, "Provided params not set" if params.empty?
+# end
+#
+# def self.verify(params, key, slice_slug)
+#   raise Error, "Provided params must be a Hash" unless params.kind_of?(Hash)
+#   raise Error, "Provided params not set" if params.empty?
+#   raise Error, "Key not set" if key.blank?
+#   raise Error, "Expected slice slug not set" if slice_slug.blank?
+# end
