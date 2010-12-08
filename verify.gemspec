@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{verify}
-  s.version = "0.4.0"
+  s.version = "0.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Steve Hoeksema"]
@@ -21,7 +21,19 @@ Gem::Specification.new do |s|
     "Gemfile.lock",
     "Rakefile",
     "TODO",
-    "VERSION"
+    "VERSION",
+    "lib/verify.rb",
+    "lib/verify/base.rb",
+    "lib/verify/error.rb",
+    "spec/spec_helper.rb",
+    "spec/support/sample_base.rb",
+    "spec/support/sample_verification_request.rb",
+    "spec/support/sample_verification_response.rb",
+    "spec/verify/base_spec.rb",
+    "spec/verify/sample_verification_request_spec.rb",
+    "spec/verify/sample_verification_response_spec.rb",
+    "spec/verify_spec.rb",
+    "verify.gemspec"
   ]
   s.homepage = %q{http://github.com/steveh/verify}
   s.licenses = ["MIT"]
@@ -30,7 +42,12 @@ Gem::Specification.new do |s|
   s.summary = %q{Verify}
   s.test_files = [
     "spec/spec_helper.rb",
+    "spec/support/sample_base.rb",
+    "spec/support/sample_verification_request.rb",
+    "spec/support/sample_verification_response.rb",
     "spec/verify/base_spec.rb",
+    "spec/verify/sample_verification_request_spec.rb",
+    "spec/verify/sample_verification_response_spec.rb",
     "spec/verify_spec.rb"
   ]
 
