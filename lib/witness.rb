@@ -1,12 +1,12 @@
 require "active_support/core_ext/class/inheritable_attributes"
 require "uri"
 require "rack/utils"
-require "signify"
+require "sigil"
 
-require "verify/base"
-require "verify/error"
+require "witness/base"
+require "witness/error"
 
-module Verify
+module Witness
 
   def self.update_url(url, new_params)
     uri = URI.parse(url)

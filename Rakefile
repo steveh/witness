@@ -12,11 +12,11 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "verify"
-  gem.homepage = "http://github.com/steveh/verify"
+  gem.name = "witness"
+  gem.homepage = "http://github.com/steveh/witness"
   gem.license = "MIT"
-  gem.summary = "Verify"
-  gem.description = "Verify"
+  gem.summary = "Witness"
+  gem.description = "Witness"
   gem.email = "steve@seven.net.nz"
   gem.authors = ["Steve Hoeksema"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
@@ -43,7 +43,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "verify #{version}"
+  rdoc.title = "witness #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

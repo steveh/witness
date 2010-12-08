@@ -1,4 +1,4 @@
-module Verify
+module Witness
   class Base
     VALID_TYPES = [:string, :integer, :symbol]
 
@@ -55,7 +55,7 @@ module Verify
         self.columns.each do |column, configuration|
           if provided_params[column] == nil || provided_params[column] == ""
             if self.presence[command] && self.presence[command].include?(column)
-              raise Verify::Error, "#{configuration[:name]} not set"
+              raise Witness::Error, "#{configuration[:name]} not set"
             end
           else
             value = case configuration[:type]
@@ -72,7 +72,7 @@ module Verify
                   when false, "false", 0, "0"
                     false
                   else
-                    raise Verify::Error, "#{configuration[:name]} not valid: #{provided_params[column].inspect}"
+                    raise Witness::Error, "#{configuration[:name]} not valid: #{provided_params[column].inspect}"
                 end
               else
                 provided_params[column]

@@ -35,27 +35,27 @@ describe SampleVerificationResponse do
 
       it "should raise an error if Slice slug is not set" do
         @valid_generate_params.delete(:slice_slug)
-        lambda { SampleVerificationResponse.generate(@valid_generate_params) }.should raise_error(Verify::Error, /Slice not set/)
+        lambda { SampleVerificationResponse.generate(@valid_generate_params) }.should raise_error(Witness::Error, /Slice not set/)
       end
 
       it "should raise an error if Request URL is not set" do
         @valid_generate_params.delete(:request_url)
-        lambda { SampleVerificationResponse.generate(@valid_generate_params) }.should raise_error(Verify::Error, /Request URL not set/)
+        lambda { SampleVerificationResponse.generate(@valid_generate_params) }.should raise_error(Witness::Error, /Request URL not set/)
       end
 
       it "should raise an error if Receive Contact URL is not set" do
         @valid_generate_params.delete(:receive_contact_url)
-        lambda { SampleVerificationResponse.generate(@valid_generate_params) }.should raise_error(Verify::Error, /Receive Contact URL not set/)
+        lambda { SampleVerificationResponse.generate(@valid_generate_params) }.should raise_error(Witness::Error, /Receive Contact URL not set/)
       end
 
       it "should raise an error if Contact ID is not set" do
         @valid_generate_params.delete(:contact_id)
-        lambda { SampleVerificationResponse.generate(@valid_generate_params) }.should raise_error(Verify::Error, /Contact ID not set/)
+        lambda { SampleVerificationResponse.generate(@valid_generate_params) }.should raise_error(Witness::Error, /Contact ID not set/)
       end
 
       it "should raise an error if Key is not set" do
         @valid_generate_params.delete(:key)
-        lambda { SampleVerificationResponse.generate(@valid_generate_params) }.should raise_error(Verify::Error, /Key not set/)
+        lambda { SampleVerificationResponse.generate(@valid_generate_params) }.should raise_error(Witness::Error, /Key not set/)
       end
 
       it "should recognise true authorizations" do
@@ -96,7 +96,7 @@ describe SampleVerificationResponse do
 
       it "should deny invalid authorizations" do
         @valid_generate_params[:authorized] = "meow"
-        lambda { SampleVerificationResponse.generate(@valid_generate_params) }.should raise_error(Verify::Error, /Authorization not valid/)
+        lambda { SampleVerificationResponse.generate(@valid_generate_params) }.should raise_error(Witness::Error, /Authorization not valid/)
       end
 
     end
@@ -143,22 +143,22 @@ describe SampleVerificationResponse do
 
       it "should raise an error if Slice slug is not set" do
         @valid_generate_params.delete(:slice_slug)
-        lambda { SampleVerificationResponse.receive(@valid_generate_params) }.should raise_error(Verify::Error, /Slice not set/)
+        lambda { SampleVerificationResponse.receive(@valid_generate_params) }.should raise_error(Witness::Error, /Slice not set/)
       end
 
       it "should raise an error if Request URL is not set" do
         @valid_generate_params.delete(:request_url)
-        lambda { SampleVerificationResponse.receive(@valid_generate_params) }.should raise_error(Verify::Error, /Request URL not set/)
+        lambda { SampleVerificationResponse.receive(@valid_generate_params) }.should raise_error(Witness::Error, /Request URL not set/)
       end
 
       it "should raise an error if Signature is not set" do
         @valid_generate_params.delete(:signature)
-        lambda { SampleVerificationResponse.receive(@valid_generate_params) }.should raise_error(Verify::Error, /Signature not set/)
+        lambda { SampleVerificationResponse.receive(@valid_generate_params) }.should raise_error(Witness::Error, /Signature not set/)
       end
 
       it "should raise an error if Signature does not match" do
         @valid_generate_params[:signature] = "incorrect"
-        lambda { SampleVerificationResponse.receive(@valid_generate_params) }.should raise_error(Verify::Error, /Signature does not match/)
+        lambda { SampleVerificationResponse.receive(@valid_generate_params) }.should raise_error(Witness::Error, /Signature does not match/)
       end
 
     end

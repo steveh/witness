@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Verify::Base do
+describe Witness::Base do
 
   it "should not allow initialization" do
     SampleBase.new.should raise_error
@@ -49,11 +49,11 @@ describe Verify::Base do
   describe "validates presence of" do
 
     it "should raise an error for a nil param" do
-      lambda { SampleBase.generate({ :first_name => nil }) }.should raise_error(Verify::Error, /name not set/)
+      lambda { SampleBase.generate({ :first_name => nil }) }.should raise_error(Witness::Error, /name not set/)
     end
 
     it "should raise an error for an empty param" do
-      lambda { SampleBase.generate({ :first_name => "" }) }.should raise_error(Verify::Error, /name not set/)
+      lambda { SampleBase.generate({ :first_name => "" }) }.should raise_error(Witness::Error, /name not set/)
     end
 
     it "should not raise an error for a set param" do

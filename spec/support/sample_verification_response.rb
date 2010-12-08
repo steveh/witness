@@ -1,4 +1,4 @@
-class SampleVerificationResponse < Verify::Base
+class SampleVerificationResponse < Witness::Base
 
   action :generate, :receive
 
@@ -16,7 +16,7 @@ class SampleVerificationResponse < Verify::Base
   attr_accessor :signature
 
   def url
-    Verify.update_url(receive_contact_url, params)
+    Witness.update_url(receive_contact_url, params)
   end
 
   def secure_params
@@ -32,8 +32,8 @@ class SampleVerificationResponse < Verify::Base
 
   def params
     _params = secure_params
-    signify = Signify::Base.new(_params, key)
-    _params.update(:signature => signify.signature).reject { |k, v| v.nil? }
+    sigil = Sigil::Base.new(_params, key)
+    _params.update(:signature => sigil.signature).reject { |k, v| v.nil? }
   end
 
   def self.construct(provided_params)
@@ -43,15 +43,15 @@ class SampleVerificationResponse < Verify::Base
 
     if command == :receive
       if provided_params[:signature].blank?
-        raise Verify::Error, "Signature not set"
+        raise Witness::Error, "Signature not set"
       end
 
-      signify = Signify::Base.new(response.secure_params, response.key)
+      sigil = Sigil::Base.new(response.secure_params, response.key)
 
-      verified = signify.verify(provided_params[:signature])
+      verified = sigil.verify(provided_params[:signature])
 
       if !verified
-        raise Verify::Error, "Signature does not match"
+        raise Witness::Error, "Signature does not match"
       end
 
     end

@@ -4,13 +4,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{verify}
+  s.name = %q{witness}
   s.version = "0.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Steve Hoeksema"]
   s.date = %q{2010-12-08}
-  s.description = %q{Verify}
+  s.description = %q{Witness}
   s.email = %q{steve@seven.net.nz}
   s.extra_rdoc_files = [
     "TODO"
@@ -22,33 +22,33 @@ Gem::Specification.new do |s|
     "Rakefile",
     "TODO",
     "VERSION",
-    "lib/verify.rb",
-    "lib/verify/base.rb",
-    "lib/verify/error.rb",
+    "lib/witness.rb",
+    "lib/witness/base.rb",
+    "lib/witness/error.rb",
     "spec/spec_helper.rb",
     "spec/support/sample_base.rb",
     "spec/support/sample_verification_request.rb",
     "spec/support/sample_verification_response.rb",
-    "spec/verify/base_spec.rb",
-    "spec/verify/sample_verification_request_spec.rb",
-    "spec/verify/sample_verification_response_spec.rb",
-    "spec/verify_spec.rb",
-    "verify.gemspec"
+    "spec/witness/base_spec.rb",
+    "spec/witness/sample_verification_request_spec.rb",
+    "spec/witness/sample_verification_response_spec.rb",
+    "spec/witness_spec.rb",
+    "witness.gemspec"
   ]
-  s.homepage = %q{http://github.com/steveh/verify}
+  s.homepage = %q{http://github.com/steveh/witness}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Verify}
+  s.summary = %q{Witness}
   s.test_files = [
     "spec/spec_helper.rb",
     "spec/support/sample_base.rb",
     "spec/support/sample_verification_request.rb",
     "spec/support/sample_verification_response.rb",
-    "spec/verify/base_spec.rb",
-    "spec/verify/sample_verification_request_spec.rb",
-    "spec/verify/sample_verification_response_spec.rb",
-    "spec/verify_spec.rb"
+    "spec/witness/base_spec.rb",
+    "spec/witness/sample_verification_request_spec.rb",
+    "spec/witness/sample_verification_response_spec.rb",
+    "spec/witness_spec.rb"
   ]
 
   if s.respond_to? :specification_version then
@@ -57,7 +57,7 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<activesupport>, [">= 3.0.0"])
-      s.add_runtime_dependency(%q<signify>, [">= 0"])
+      s.add_runtime_dependency(%q<sigil>, [">= 0"])
       s.add_runtime_dependency(%q<rack>, [">= 0"])
       s.add_development_dependency(%q<rspec>, ["~> 2.1.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -66,7 +66,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<rspec>, [">= 2.1.0"])
     else
       s.add_dependency(%q<activesupport>, [">= 3.0.0"])
-      s.add_dependency(%q<signify>, [">= 0"])
+      s.add_dependency(%q<sigil>, [">= 0"])
       s.add_dependency(%q<rack>, [">= 0"])
       s.add_dependency(%q<rspec>, ["~> 2.1.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -76,7 +76,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<activesupport>, [">= 3.0.0"])
-    s.add_dependency(%q<signify>, [">= 0"])
+    s.add_dependency(%q<sigil>, [">= 0"])
     s.add_dependency(%q<rack>, [">= 0"])
     s.add_dependency(%q<rspec>, ["~> 2.1.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])

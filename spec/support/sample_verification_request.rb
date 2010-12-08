@@ -1,4 +1,4 @@
-class SampleVerificationRequest < Verify::Base
+class SampleVerificationRequest < Witness::Base
 
   action :generate, :receive
 
@@ -13,7 +13,7 @@ class SampleVerificationRequest < Verify::Base
   validates_presence_of :cas_host, :on => :generate
 
   def url
-    Verify.update_url("http://#{cas_host}/cas/contact/verify", params)
+    Witness.update_url("http://#{cas_host}/cas/contact/witness", params)
   end
 
   def params

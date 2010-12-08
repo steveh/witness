@@ -1,4 +1,4 @@
-module Verify
+module Witness
 
   class Error < StandardError
   end

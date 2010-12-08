@@ -20,7 +20,7 @@ GEM
     rspec-expectations (2.1.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.1.0)
-    signify (0.1.0)
+    sigil (1.0.0)
       activesupport (>= 3.0.0)
       i18n
 
@@ -34,4 +34,4 @@ DEPENDENCIES
   rack
   rcov
   rspec (~> 2.1.0)
-  signify
+  sigil (>= 1.0.0)

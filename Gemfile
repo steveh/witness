@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
 gem "activesupport", ">= 3.0.0"
-gem "signify"
+gem "sigil", ">= 1.0.0"
 gem "rack"
 
 group :development do

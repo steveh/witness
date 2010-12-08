@@ -3,7 +3,7 @@
 #   raise Error, "Provided params not set" if params.empty?
 # end
 #
-# def self.verify(params, key, slice_slug)
+# def self.witness(params, key, slice_slug)
 #   raise Error, "Provided params must be a Hash" unless params.kind_of?(Hash)
 #   raise Error, "Provided params not set" if params.empty?
 #   raise Error, "Key not set" if key.blank?

@@ -1,4 +1,4 @@
-class SampleBase < Verify::Base
+class SampleBase < Witness::Base
 
   action :generate, :receive
 
