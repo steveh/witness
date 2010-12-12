@@ -8,12 +8,11 @@ class SampleVerificationResponse < Witness::Base
   column :receive_contact_url, :name => "Receive Contact URL"
   column :contact_id, :type => :integer, :name => "Contact ID"
   column :authorized, :type => :boolean, :name => "Authorization"
-  column :key
 
-  validates_presence_of :slice_slug, :request_url, :contact_id, :key
+  validates_presence_of :slice_slug, :request_url, :contact_id
   validates_presence_of :receive_contact_url, :on => :generate
 
-  attr_accessor :signature
+  validates_signature_of :slice_slug, :contact_id, :secure_area_id, :authorized, :request_url, :on => :receive
 
   def url
     Witness.update_url(receive_contact_url, params)
@@ -34,29 +33,6 @@ class SampleVerificationResponse < Witness::Base
     _params = secure_params
     sigil = Sigil::Base.new(_params, key)
     _params.update(:signature => sigil.signature).reject { |k, v| v.nil? }
-  end
-
-  def self.construct(provided_params)
-    response = super(provided_params)
-
-    command = provided_params[:command]
-
-    if command == :receive
-      if provided_params[:signature].blank?
-        raise Witness::Error, "Signature not set"
-      end
-
-      sigil = Sigil::Base.new(response.secure_params, response.key)
-
-      verified = sigil.verify(provided_params[:signature])
-
-      if !verified
-        raise Witness::Error, "Signature does not match"
-      end
-
-    end
-
-    response
   end
 
 end
