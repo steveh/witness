@@ -19,10 +19,9 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency(%q<activesupport>, [">= 3.0.0"])
-  s.add_runtime_dependency(%q<sigil>, ["~> 1.0.2"])
-  s.add_runtime_dependency(%q<rack>, [">= 0"])
-  s.add_development_dependency(%q<rspec>, ["~> 2.1.0"])
-  s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-  s.add_development_dependency(%q<rcov>, [">= 0"])
+  s.add_runtime_dependency("activesupport", [">= 3.0.0"])
+  s.add_runtime_dependency("sigil", ["~> 1.0.2"])
+  s.add_runtime_dependency("rack", [">= 0"])
+  s.add_development_dependency("rspec", ["~> 2.1.0"])
+  s.add_development_dependency("bundler", ["~> 1.0.0"])
 end
